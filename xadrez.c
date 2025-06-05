@@ -4,6 +4,7 @@ int main() {
     
     int menuMovimento;
     int movimentoTorre, movimentoBispo, movimentoRainha;
+    int moveCasas;
 
     //menu de movimentacao
         printf("Escolha qual peça mover:\n");
@@ -11,21 +12,30 @@ int main() {
         printf("2. Bispo.\n");
         printf("3. Rainha.\n");
         printf("Digite o número da peça que deseja mover: ");
-        scanf("%d", menuMovimento);
+        scanf("%d", &menuMovimento);
         
         switch (menuMovimento)
         {
             case 1:
+                moveCasas = 0;
                 printf("Digite quantas casas a torre vai se mover à direita: ");
                 scanf("%d", &movimentoTorre);
-                for(int i = 0; i < movimentoTorre; i++)
+                for(moveCasas; moveCasas < movimentoTorre; moveCasas++)
                 {
-                    printf("%d. Direita\n", i + 1);
+                    printf("%d. Direita\n", moveCasas + 1);
                 }
                 break;
 
             case 2:
-                /* code */
+                moveCasas = 0;
+                printf("Digite quantas casas o bispo irá se mover para a diagonal superior direita: ");
+                scanf("%d", &movimentoBispo);
+                while (moveCasas < movimentoBispo)
+                {
+                    printf("%d. Direita Cima\n", moveCasas + 1);
+                    moveCasas++;
+                }
+                
                 break;
 
             case 3:
