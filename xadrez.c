@@ -25,6 +25,7 @@ int main() {
                 {
                     printf("%d. Direita\n", i + 1);
                 }
+
                 break;
 
         //movimentacao bispo
@@ -37,7 +38,7 @@ int main() {
                     printf("%d. Cima Direita\n", i + 1);
                     i++;
                 }
-                
+
                 break;
 
         //movimentacao rainha
@@ -50,7 +51,7 @@ int main() {
                     printf("%d. Esquerda\n", i + 1);
                     i++;
                 } while (i < movimentoRainha);
-                
+
                 break;
 
         //movimentacao cavalo
@@ -70,14 +71,13 @@ int main() {
                     printf("\n");
                     i++;
                 }
-                
-                
-                
+
                 break;
 
         //opcao invalida
             default:
                 printf("Opção inválida\n");
+                
                 break;
         }
     
