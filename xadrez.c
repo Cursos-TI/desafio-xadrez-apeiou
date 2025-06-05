@@ -19,7 +19,7 @@ int main() {
         {
         //movimentacao torre
             case 1:
-                printf("Digite quantas casas a Torre vai se mover à direita: ");
+                printf("Digite quantas vezes a Torre vai se mover à direita: ");
                 scanf("%d", &movimentoTorre);
                 for(i = 0; i < movimentoTorre; i++)
                 {
@@ -30,11 +30,11 @@ int main() {
         //movimentacao bispo
             case 2:
                 i = 0;
-                printf("Digite quantas casas o Bispo irá se mover para a diagonal superior direita: ");
+                printf("Digite quantas vezes o Bispo irá se mover para a diagonal cima direita: ");
                 scanf("%d", &movimentoBispo);
                 while (i < movimentoBispo)
                 {
-                    printf("%d. Direita Cima\n", i + 1);
+                    printf("%d. Cima Direita\n", i + 1);
                     i++;
                 }
                 
@@ -43,13 +43,35 @@ int main() {
         //movimentacao rainha
             case 3:
                 i = 0;
-                printf("Digite quantas casas a Rainha irá se mover para a esquerda: ");
+                printf("Digite quantas vezes a Rainha irá se mover para a esquerda: ");
                 scanf("%d", &movimentoRainha);
                 do
                 {
                     printf("%d. Esquerda\n", i + 1);
                     i++;
                 } while (i < movimentoRainha);
+                
+                break;
+
+        //movimentacao cavalo
+            case 4:
+                i = 0;
+                printf("Digite quantas vezes o Cavalo irá se mover em L para baixo esquerda: ");
+                scanf("%d", &movimentoCavalo);
+                while (i < movimentoCavalo)
+                {
+                    printf("%d.", i + 1);
+                    for (j = 0; j < 2; j++)
+                    {
+                        printf("Baixo\n");
+                    
+                    }
+                    printf("Esquerda\n");
+                    printf("\n");
+                    i++;
+                }
+                
+                
                 
                 break;
 
