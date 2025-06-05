@@ -16,9 +16,10 @@ int main() {
         
         switch (menuMovimento)
         {
+        //movimentacao torre
             case 1:
                 moveCasas = 0;
-                printf("Digite quantas casas a torre vai se mover à direita: ");
+                printf("Digite quantas casas a Torre vai se mover à direita: ");
                 scanf("%d", &movimentoTorre);
                 for(moveCasas; moveCasas < movimentoTorre; moveCasas++)
                 {
@@ -26,9 +27,10 @@ int main() {
                 }
                 break;
 
+        //movimentacao bispo
             case 2:
                 moveCasas = 0;
-                printf("Digite quantas casas o bispo irá se mover para a diagonal superior direita: ");
+                printf("Digite quantas casas o Bispo irá se mover para a diagonal superior direita: ");
                 scanf("%d", &movimentoBispo);
                 while (moveCasas < movimentoBispo)
                 {
@@ -38,20 +40,24 @@ int main() {
                 
                 break;
 
+        //movimentacao rainha
             case 3:
-                /* code */
+                moveCasas = 0;
+                printf("Digite quantas casas a Rainha irá se mover para a esquerda: ");
+                scanf("%d", &movimentoRainha);
+                do
+                {
+                    printf("%d. Esquerda\n", moveCasas + 1);
+                    moveCasas++;
+                } while (moveCasas < movimentoRainha);
+                
                 break;
-            
+
+        //opcao invalida
             default:
+                printf("Opção inválida\n");
                 break;
         }
     
     return 0;
 }
-
-    //torre horizontal direita 5x
-    //bispo diagonal direita cima 5x
-    //rainha esquerda 8x
-
-    //menu de escolha qual mover
-    //switch 1 torre, 2 bispo, 3 rainha
