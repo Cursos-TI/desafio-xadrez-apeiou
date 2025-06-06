@@ -52,14 +52,14 @@ int main() {
                 movimentoTorre(movimentos);
             break;
 
-        //movimentacao bispo
+        //movimentacao bispo - recursivo, aninhado
             case 2:
                 printf("Digite quantas vezes o Bispo irá se mover para a diagonal cima direita: ");
                 scanf("%d", &movimentos);
                 movimentoBispo(movimentos);
             break;
         
-        //movimentacao rainha - estrutura de repeticao simples
+        //movimentacao rainha - recursivo
             case 3:
                 printf("Digite quantas vezes a Rainha irá se mover para a esquerda: ");
                 scanf("%d", &movimentos);
@@ -91,8 +91,7 @@ int main() {
         //opcao invalida
             default:
                 printf("Opção inválida\n");
-                
-                break;
+            break;
         }
     
     return 0;
