@@ -9,7 +9,7 @@ void movimentoTorre(int casas){
 }
 
 void movimentoBispo(int casas){
-    int contador = 1; //contador de número de movimentacao da peca
+    int contador = 1; //contador do numero de movimentacoes da peca
     for (casas; casas > 0; casas--)
     {
         printf("%d. ", contador);
@@ -30,11 +30,29 @@ void movimentoRainha(int casas){
     }
 }
 
-int main() {
-    
-    int menuXadrez, movimentos;
+void movimentoCavalo(int casas){
+    int contador = 1; //contador do número de movimentacoes da peca
+    const int passosMaximo = 3; //variavel constante do numero maximo de passos por movimento da peca
+    for (casas; casas > 0; casas--)
+    {
+        printf("%d. ", contador);
+        for (int passos = 0; passos < passosMaximo; passos++)
+        {
+            if (passos < 2)
+            {
+                printf("Baixo.\n");
+            }else{
+                printf("Esquerda.\n");
+            }
+        }
+        contador++;
+    }
+}
 
+int main() {
     //menu de movimentacao
+        int menuXadrez, movimentos;
+
         printf("Escolha qual peça mover:\n");
         printf("1. Torre.\n");
         printf("2. Bispo.\n");
@@ -52,7 +70,7 @@ int main() {
                 movimentoTorre(movimentos);
             break;
 
-        //movimentacao bispo - recursivo, aninhado
+        //movimentacao bispo - loop aninhado
             case 2:
                 printf("Digite quantas vezes o Bispo irá se mover para a diagonal cima direita: ");
                 scanf("%d", &movimentos);
@@ -65,28 +83,13 @@ int main() {
                 scanf("%d", &movimentos);
                 movimentoRainha(movimentos);
             break;
-
-        /*        
-        //movimentacao cavalo - estrutura de repeticao avancada
+   
+        //movimentacao cavalo - loop aninhado condicional
             case 4:
-                i = 0;
                 printf("Digite quantas vezes o Cavalo irá se mover em L para baixo esquerda: ");
-                scanf("%d", &moves);
-                while (i < moves)
-                {
-                    printf("%d.", i + 1);
-                    for (j = 0; j < 2; j++)
-                    {
-                        printf("Baixo\n");
-                    
-                    }
-                    printf("Esquerda\n");
-                    printf("\n");
-                    i++;
-                }
-
-                break;
-        */
+                scanf("%d", &movimentos);
+                movimentoCavalo(movimentos);
+            break;
 
         //opcao invalida
             default:
