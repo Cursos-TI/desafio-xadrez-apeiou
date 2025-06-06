@@ -9,7 +9,7 @@ void movimentoTorre(int casas){
 }
 
 void movimentoBispo(int casas){
-    int contador = 1;  
+    int contador = 1; //contador de número de movimentacao da peca
     for (casas; casas > 0; casas--)
     {
         printf("%d. ", contador);
@@ -20,12 +20,19 @@ void movimentoBispo(int casas){
         printf("Direita\n");
         contador++;
     }
-} 
+}
 
+void movimentoRainha(int casas){
+    if (casas > 0)
+    {
+        movimentoRainha(casas - 1);
+        printf("%d. Esquerda.\n", casas);
+    }
+}
 
 int main() {
     
-    int menuXadrez, moves;
+    int menuXadrez, movimentos;
 
     //menu de movimentacao
         printf("Escolha qual peça mover:\n");
@@ -41,31 +48,25 @@ int main() {
         //movimentacao torre - recursivo
             case 1:
                 printf("Digite quantas vezes a Torre vai se mover à direita: ");
-                scanf("%d", &moves);
-                movimentoTorre(moves);
+                scanf("%d", &movimentos);
+                movimentoTorre(movimentos);
             break;
 
         //movimentacao bispo
             case 2:
                 printf("Digite quantas vezes o Bispo irá se mover para a diagonal cima direita: ");
-                scanf("%d", &moves);
-                movimentoBispo(moves);
+                scanf("%d", &movimentos);
+                movimentoBispo(movimentos);
             break;
         
-        /*
         //movimentacao rainha - estrutura de repeticao simples
             case 3:
-                i = 0;
                 printf("Digite quantas vezes a Rainha irá se mover para a esquerda: ");
-                scanf("%d", &moves);
-                do
-                {
-                    printf("%d. Esquerda\n", i + 1);
-                    i++;
-                } while (i < moves);
+                scanf("%d", &movimentos);
+                movimentoRainha(movimentos);
+            break;
 
-                break;
-
+        /*        
         //movimentacao cavalo - estrutura de repeticao avancada
             case 4:
                 i = 0;
